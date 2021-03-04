@@ -14,7 +14,6 @@ const About = () => {
 
                 <img src={logo} alt='Bubblify logo' style={styles}/>
 
-                <img src={logo} alt='Bubblify logo' style={styles} />
             </div>
             <div className='contactInfo'>
                 <p className='contactInfoText' style={styles}>Address: </p>
