@@ -7,7 +7,7 @@ function App() {
   return (
     <div id="app">
       <NavBar/>
-      <div className="container">
+      <div className="container py-5">
         <Bubbles/>
         {/*<About/>*/}
       </div>
