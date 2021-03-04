@@ -7,11 +7,20 @@ const About = () => {
         <div className='aboutUsContainer' style={styles}>
             <h1>About Us</h1>
             <div className='aboutUs'>
-                <h5 className='aboutUsText' style={styles}>
+                <p className='aboutUsText' style={styles}>
                     Bubblify is a new emerging company that specifies in the manufacturing of bubbles!
-                </h5>
+                    We offer a wide range of bubbles, from Plain bubbles to the unique Dark Matter bubbles.
+                </p>
+
                 <img src={logo} alt='Bubblify logo' style={styles}/>
+
             </div>
+            <div className='contactInfo'>
+                <p className='contactInfoText' style={styles}>Address: </p>
+                <p className='contactInfoText' style={styles}>Telephone: </p>
+                <p className='contactInfoText' style={styles}>Email: </p>
+            </div>
+
         </div>
     )
 };

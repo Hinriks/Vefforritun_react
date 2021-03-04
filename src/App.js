@@ -8,8 +8,8 @@ function App() {
     <div id="app">
       <NavBar/>
       <div className="container py-5">
+        <About/>
         <Bubbles/>
-        {/*<About/>*/}
       </div>
     </div>
   );

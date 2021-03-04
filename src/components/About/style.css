@@ -3,12 +3,28 @@
     margin: 20px;
 }
 
+.aboutUs {
+    display: flex;
+}
+
 .aboutUsText {
     padding-top: 10px;
-    color: #696969;
+    padding-right: 20px;
+    font-size: 20px;
 }
 
 img {
     height: 400px;
     width: 300px;
+    border-radius: 20px;
+
+}
+
+.contactInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactInfoText {
+    font-weight: bold;
 }
