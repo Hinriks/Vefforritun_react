@@ -1,14 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { getBubbles } from '../../services/bubbleService';
 
 const Bubbles = () => {
+    const [ bubbles, setBubbles ] = useState({});
     useEffect(() => {
         (async () => {
-            console.log(await getBubbles());
+            setBubbles(await getBubbles());
         })();
     }, []);
     return (
-        <div>Bubbles</div>
+        <div>
+            {Object.values(bubbles).map(item => 
+                <div key={item.id}>{item.name}</div>
+            )}
+        </div>
     )
 };
 
