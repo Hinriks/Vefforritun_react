@@ -1,0 +1,14 @@
+
+.aboutUsContainer {
+    margin: 20px;
+}
+
+.aboutUsText {
+    padding-top: 10px;
+    color: #696969;
+}
+
+img {
+    height: 400px;
+    width: 300px;
+}
