@@ -13,9 +13,10 @@ const Bundles = () => {
     console.log(bundles)
     return (
         <div>
-            <h1>Bundles</h1>
+            
             {Object.values(bundles).map(item =>
                 <div className="col-md-4" key={item.id}>
+                    <h1>{item.name}</h1>
                     <BundleList key={item.id} item={item} />
                 </div>
             )}
