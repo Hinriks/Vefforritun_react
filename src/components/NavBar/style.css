@@ -8,3 +8,7 @@
 .logo:hover {
     opacity: 70%;
 }
+
+.nav-item {
+    font-size: 20px;
+}
