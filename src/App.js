@@ -11,16 +11,12 @@ function App() {
     <div id="app">
       <NavBar />
       <div className="container py-5">
-        {/* <About /> */}
-        {/* <Bubbles /> */}
         <Switch>
           <Route exact path="/bubbles" component={Bubbles} />
           <Route exact path="/bundles" component={Bundles} />
           <Route exact path="/about" component={About} />
           <Route exact path="/cart" component={Cart} />
         </Switch>
-
-        {/*<About/>*/}
       </div>
     </div>
   );
