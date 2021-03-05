@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import About from './components/About';
 import Bundles from './components/Bundles';
 import Cart from './components/Cart';
+import BubbleDetails from './components/BubbleDetails';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/bundles" component={Bundles} />
           <Route exact path="/about" component={About} />
           <Route exact path="/cart" component={Cart} />
+          <Route exact path="/bubbles/:id" component={BubbleDetails} />
         </Switch>
       </div>
     </div>

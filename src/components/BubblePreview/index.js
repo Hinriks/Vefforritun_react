@@ -7,7 +7,7 @@ const BubblePreview = ({ item }) => {
             <div className="card-body">
                 <h5 className="card-title">{item.name}</h5>
                 <p className="card-text">{item.description}</p>
-                <a href="/" className="btn btn-primary float-right">Buy now!</a>
+                <a href={"/bubbles/" + item.id } className="btn btn-primary float-right">Buy now!</a>
             </div>
         </div>
     )

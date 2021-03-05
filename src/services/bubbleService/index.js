@@ -11,3 +11,8 @@ export const getBundles = async () => {
     if (!result.ok) { return []; }
     return (await result).json()
 }
+
+export const getBubbleById = async id => {
+    let bubbles = await getBubbles();
+    return bubbles.find(n => n.id == id);
+}
