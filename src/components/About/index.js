@@ -12,7 +12,7 @@ const About = () => {
                     We offer a wide range of bubbles, from Plain bubbles to the unique Dark Matter bubbles.
                 </p>
 
-                <img src={logo} alt='Bubblify logo' style={styles}/>
+                <img src={logo} alt='Bubblify logo' style={styles} />
 
             </div>
             <div className='contactInfo'>

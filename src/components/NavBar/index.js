@@ -7,25 +7,38 @@ const NavBar = () => {
             <div className="container">
                 <a className="navbar-brand" href="/">Bubblify</a>
                 <ul className="navbar-nav">
-                    <li className="nav-item active">
 
-                        <a className="nav-link" href="/">Products</a>
+                    <li className="nav-item">
+                        <NavLink
+                            exact
+                            to="/bubbles"
+                            className="nav-link">Products</NavLink>
+                        {/* <a className="nav-link" href="/">Products</a> */}
                     </li>
+
                     <li className="nav-item">
                         <NavLink
                             exact
                             to="/bundles"
                             className="nav-link">Bundles</NavLink>
                     </li>
+
                     <li className="nav-item">
-                        <a className="nav-link" href="/">About us</a>
+                        <NavLink
+                            exact
+                            to="/about"
+                            className="nav-link">About us </NavLink>
                     </li>
+
                     <li className="nav-item">
-                        <a className="nav-link" href="/">Cart</a>
+                        <NavLink
+                            exact
+                            to="/cart"
+                            className="nav-link">Cart </NavLink>
                     </li>
                 </ul>
-            </div>
-        </nav>
+            </div >
+        </nav >
 
     )
 };
