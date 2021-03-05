@@ -28,3 +28,7 @@ img {
 .contactInfoText {
     font-weight: bold;
 }
+
+a {
+    font-weight: normal;
+}

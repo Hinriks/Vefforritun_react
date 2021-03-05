@@ -1,0 +1,14 @@
+
+.navbar img {
+    height: 90px;
+    width: 170px;
+    display: inline-block;
+}
+
+.logo:hover {
+    opacity: 70%;
+}
+
+.nav-item {
+    font-size: 20px;
+}

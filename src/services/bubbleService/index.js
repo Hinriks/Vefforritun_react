@@ -1,6 +1,5 @@
 import * as constants from "./constants";
 
-
 export const getBubbles = async () => {
     const result = await fetch(constants.BUBBLES_URL);
     if (!result.ok) { return {}; }
@@ -11,4 +10,9 @@ export const getBundles = async () => {
     const result = await fetch(constants.BUNDLES_URL);
     if (!result.ok) { return {}; }
     return (await result).json()
+}
+
+export const getBubbleById = async id => {
+    let bubbles = await getBubbles();
+    return bubbles.find(n => n.id == id);
 }

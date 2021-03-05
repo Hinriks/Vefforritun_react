@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './style.css';
-import logo from '../../resources/bubblify.jpg';
+import bubblifyPicture from '../../resources/bubblify.jpg';
 
 const About = () => {
     return (
@@ -8,17 +8,22 @@ const About = () => {
             <h1>About Us</h1>
             <div className='aboutUs'>
                 <p className='aboutUsText' style={styles}>
-                    Bubblify is a new emerging company that specifies in the manufacturing of bubbles!
-                    We offer a wide range of bubbles, from Plain bubbles to the unique Dark Matter bubbles.
+                    Bubblify is a new emerging company that specifies in the manufacturing of bubbles.
+                    <br />
+                    We offer a wide range of bubbles, from Plain bubbles all the way to the crazy and unique Dark Matter bubbles!
+                    <br />
+                    <br />
+                    We are very proud of the quality of our bubbles, as the water comes from the cleanest glaciers in Iceland, and the
+                    soap used to make the bubbles is completely organic!
                 </p>
 
-                <img src={logo} alt='Bubblify logo' style={styles} />
+                <img src={bubblifyPicture} alt='Bubblify bubblifyPicture' style={styles} />
 
             </div>
             <div className='contactInfo'>
-                <p className='contactInfoText' style={styles}>Address: </p>
-                <p className='contactInfoText' style={styles}>Telephone: </p>
-                <p className='contactInfoText' style={styles}>Email: </p>
+                <p className='contactInfoText' style={styles}>Address: <a style={styles}>Bubble Street 999</a></p>
+                <p className='contactInfoText' style={styles}>Telephone: <a style={styles}>+354 421-0000</a></p>
+                <p className='contactInfoText' style={styles}>Email: <a href='mailto:bubblify@bubblify.com' style={styles}>bubblify@bubblify.com</a></p>
             </div>
 
         </div>
