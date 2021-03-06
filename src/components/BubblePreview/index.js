@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './style.css';
 
 const BubblePreview = ({ item }) => {
@@ -17,6 +18,16 @@ const BubblePreview = ({ item }) => {
             <a href="/" className="btn btn-primary">Buy now!</a>
         </div>
     )
+};
+
+BubblePreview.propTypes = {
+    item: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        image: PropTypes.string.isRequired,
+    })
 };
 
 export default BubblePreview;
