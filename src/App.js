@@ -14,9 +14,6 @@ function App() {
   return (
     <div id="app">
       <NavBar />
-      {/*<Delivered/>*/}
-      {/*<Pickup/>*/}
-      <OrderReview/>
       <div className="container py-5">
         <Switch>
           <Route exact path="/bubbles" component={Bubbles} />

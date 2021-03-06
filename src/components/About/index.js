@@ -4,7 +4,7 @@ import bubblifyPicture from '../../resources/bubblify.jpg';
 
 const About = () => {
     return (
-        <div className='aboutUsContainer' style={styles}>
+        <div className='container'>
             <h1>About Us</h1>
             <div className='aboutUs'>
                 <p className='aboutUsText' style={styles}>

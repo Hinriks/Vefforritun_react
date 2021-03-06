@@ -11,12 +11,15 @@ const Bubbles = () => {
     }, []);
     console.log(bubbles)
     return (
-        <div className="row">
-            {Object.values(bubbles).map(item => 
-                <div key={item.id} className="col-md-4">
-                    <BubblePreview item={item}/>
-                </div>
-            )}
+        <div className='container'>
+            <h1>Products</h1>
+            <div className="row">
+                {Object.values(bubbles).map(item =>
+                    <div key={item.id} className="col-md-4">
+                        <BubblePreview item={item}/>
+                    </div>
+                )}
+            </div>
         </div>
     )
 };
