@@ -2,3 +2,12 @@
 .card {
     height: 650px;
 }
+
+.image:hover {
+    background-color: #f3f3f3;
+    opacity: 80%;
+}
+
+a > h5 {
+    color: black;
+}
