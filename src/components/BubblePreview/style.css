@@ -1,4 +1,8 @@
 
 .card {
-    height: 650px;
+    min-height: 500px; /* To make loading look nice */
+} 
+.card-img-top {
+    min-height: 348px; /* To make loading look nice */
+    height: 100%;
 }

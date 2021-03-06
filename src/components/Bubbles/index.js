@@ -13,8 +13,8 @@ const Bubbles = () => {
     return (
         <div className="row">
             {Object.values(bubbles).map(item => 
-                <div className="col-md-4">
-                    <BubblePreview key={item.id} item={item}/>
+                <div key={item.id} className="col-md-4">
+                    <BubblePreview item={item}/>
                 </div>
             )}
         </div>
