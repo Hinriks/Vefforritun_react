@@ -6,11 +6,15 @@ import About from './components/About';
 import Bundles from './components/Bundles';
 import Cart from './components/Cart';
 import BubbleDetails from './components/BubbleDetails';
+import Delivered from './components/Delivered';
+import Pickup from './components/Pickup';
 
 function App() {
   return (
     <div id="app">
       <NavBar />
+      {/*<Delivered/>*/}
+      {/*<Pickup/>*/}
       <div className="container py-5">
         <Switch>
           <Route exact path="/bubbles" component={Bubbles} />
