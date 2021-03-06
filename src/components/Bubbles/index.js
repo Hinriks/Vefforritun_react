@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getBubbles } from '../../services/bubbleService';
 import BubblePreview from '../BubblePreview';
+import styles from './style.css';
 
 const Bubbles = () => {
     const [ bubbles, setBubbles ] = useState({});
@@ -11,7 +12,7 @@ const Bubbles = () => {
     }, []);
     console.log(bubbles)
     return (
-        <div className='container'>
+        <div className='container bubblesContainer' style={styles}>
             <h1>Products</h1>
             <div className="row">
                 {Object.values(bubbles).map(item =>
