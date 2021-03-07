@@ -6,7 +6,7 @@ const BubblePreview = ({ item }) => {
     return (
         <div className="card mb-4 box-shadow bubble-preview" style={styles}>
             <a href={"/bubbles/" + item.id} className='image'>
-                <img className="card-img-top" src={item.image} alt={item.name}/>
+                <img className="card-img-top bubble-preview-img" src={item.image} alt={item.name}/>
             </a>
             <div className="card-body">
                 <a href={"/bubbles/" + item.id}>

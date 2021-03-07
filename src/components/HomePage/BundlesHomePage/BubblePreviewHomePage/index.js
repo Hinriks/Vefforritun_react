@@ -7,7 +7,7 @@ const BubblePreviewHomePage = ({ item }) => {
             <div className="bubble-preview" style={styles}>
                 <img className="bubbleImg" src={item.image} alt={item.name}/>
                 <div>
-                    <h5 className="card-title">{item.name}</h5>
+                    <h5 className="card-title py-4">{item.name}</h5>
                 </div>
             </div>
     )

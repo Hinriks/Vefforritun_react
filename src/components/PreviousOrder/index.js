@@ -1,5 +1,5 @@
 import React from 'react';
-import { getCart, removeFromCart } from '../../services/cartService';
+import { addToCart, clearCart, getCart, removeFromCart } from '../../services/cartService';
 import { getOrder } from '../../services/orderService';
 import styles from './styles.css'
 
@@ -36,6 +36,16 @@ class PreviousOrders extends React.Component {
         this.setState({ phone: event.target.value })
     }
 
+    addOrderToCart() {
+        if (this.state.order) {
+            clearCart()
+            this.state.order.items.forEach(item => {
+                addToCart(item)
+                window.location.href = "/checkout"
+            })
+        }
+    }
+
     render() {
         const { phone, order } = this.state;
         return (
@@ -48,7 +58,7 @@ class PreviousOrders extends React.Component {
                     <div className="btn btn-primary" onClick={() => this.findOrder()}>Search</div>
                 </div>
             </div>
-            {order.items.length > 0 ?
+            {order && order.items.length > 0 ?
                 <div className="card">
                     <div className="card-body">
                         <div className="card-title text-center">Ordered on { order.date }</div>
@@ -60,14 +70,14 @@ class PreviousOrders extends React.Component {
                             </li>
                             )}
                         <div className="text-center pt-3">
-                            <div className="btn btn-primary text-center">Order again</div>
+                            <div className="btn btn-primary text-center" onClick={ () => this.addOrderToCart() }>Order again</div>
                         </div>
                     </div>
                     
                 </div>
                 :
                 <div>
-                    <h4>This phone number has no previous order stored.</h4>
+                    <h4>This phone number has no previous orders.</h4>
                 </div>
             }
         </div>
