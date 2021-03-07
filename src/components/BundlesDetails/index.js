@@ -49,7 +49,7 @@ class BundlesDetails extends React.Component {
                     <div className="row">
                         {bubbles.map((item, index) =>
                             <div key={index} className="card m-2 bundle-card">
-                                <img className="cart-img-top bundle-item-img" src={item.image} alt='Bubble image'/>
+                                <img className="cart-img-top bundle-item-img" src={item.image} alt={item.name}/>
                                 <div className="card-body text-center">
                                     <h5 className="card-title">{item.name}</h5>
                                     <strong>{item.price} kr.</strong>

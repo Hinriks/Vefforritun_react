@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { getBubbleById } from '../../services/bubbleService'
 import BubblePreviewHomePage from "../HomePage/BundlesHomePage/BubblePreviewHomePage";
 import styles from "../HomePage/BundlesHomePage/BundlesListHomePage/style.css";
-import Bundles from "../Bundles";
 
 class BundlesList extends React.Component {
     state = {

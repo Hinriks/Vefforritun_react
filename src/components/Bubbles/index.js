@@ -7,9 +7,13 @@ import styles from './style.css';
 const Bubbles = () => {
     const [ bubbles, setBubbles ] = useState({});
     useEffect(() => {
+        let isMounted = true;
         (async () => {
-            setBubbles(await getBubbles());
+            if (isMounted) {
+                setBubbles(await getBubbles());
+            }
         })();
+        return () => { isMounted = false };
     }, []);
 
     return (

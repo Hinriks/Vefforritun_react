@@ -34,9 +34,10 @@ const OrderReview = (props) => {
                                         <tr key={index}>
                                             <td className="col-md-3">
                                                 <div className="media">
-                                                    <a className="thumbnail pull-left" href="#"> <img className="media-object"
+                                                    <div className="thumbnail pull-left"> <img className="media-object"
                                                                                                     src={item.image}
-                                                                                                    style={{width: '72px', height: '72px'}} /> </a>
+                                                                                                    style={{width: '72px', height: '72px'}}
+                                                                                                    alt={item.name} /> </div>
                                                     <div className="media-body">
                                                         <h5 className="media-heading">{ item.name }</h5>
                                                     </div>

@@ -6,16 +6,20 @@ import BundlesListHomePage from "./BundlesListHomePage";
 const BundlesHomePage = () => {
     const [bundles, setBundles] = useState({});
     useEffect(() => {
+        let isMounted = true;
         (async () => {
-            setBundles(await getBundles());
+            if (isMounted) {
+                setBundles(await getBundles());
+            }
         })();
+        return () => { isMounted = false };
     }, [bundles]);
 
     return (
         <div className='bundlesHomePageContainer' style={styles}>
             <h2>Bundles</h2>
             {Object.values(bundles).map(item =>
-                <a href={"/bundles/" + item.id} style={{margin: '40px'}}>
+                <a href={"/bundles/" + item.id} key={item.id} className="text-decoration-none" style={{margin: '40px'}}>
                 <div key={item.id}>
                     <h3 className='bundleName' style={styles}>{item.name}</h3>
                     <BundlesListHomePage key={item.id} item={item} />

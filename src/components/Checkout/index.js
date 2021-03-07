@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import styles from './style.css';
 import CheckoutSteps from '../CheckoutSteps';
 import DeliveryMethod from '../DeliveryMethod';
 import Delivered from '../Delivered';
@@ -56,7 +55,7 @@ class Checkout extends React.Component {
 
     render() {
         let { checkoutStep, deliveryOption, items } = this.state;
-        if (checkoutStep == 1) {
+        if (checkoutStep === 1) {
             return (
                 <>
                     <h1>Checkout</h1>
@@ -64,9 +63,9 @@ class Checkout extends React.Component {
                     <DeliveryMethod incStep={ () => this.setState({ checkoutStep: this.state.checkoutStep + 1 }) } setDeliveryMethod={ this.setDeliveryMethod.bind(this) } />
                 </>
             )
-        } else if (checkoutStep == 2) {
+        } else if (checkoutStep === 2) {
             let deliveryMethod;
-            if (deliveryOption == "Delivery") {
+            if (deliveryOption === "Delivery") {
                 deliveryMethod = <Delivered
                                     incStep={ () => this.setState({ checkoutStep: this.state.checkoutStep + 1 }) }
                                     saveCustomer={ this.saveCustomer.bind(this) }
@@ -84,7 +83,7 @@ class Checkout extends React.Component {
                     {deliveryMethod}
                 </>
             )
-        } else if (checkoutStep == 3) {
+        } else if (checkoutStep === 3) {
             return (
                 <>
                     <h1>Checkout</h1>
@@ -97,7 +96,7 @@ class Checkout extends React.Component {
                         />
                 </>
             )
-        } else if (checkoutStep == 4) {
+        } else if (checkoutStep === 4) {
             return (
                 <>
                     <h1>Checkout</h1>

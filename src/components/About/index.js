@@ -21,9 +21,9 @@ const About = () => {
 
             </div>
             <div className='contactInfo'>
-                <p className='contactInfoText' style={styles}>Address: <a style={styles}>Bubble Street 999</a></p>
-                <p className='contactInfoText' style={styles}>Telephone: <a style={styles}>+354 421-0000</a></p>
-                <p className='contactInfoText' style={styles}>Email: <a href='mailto:bubblify@bubblify.com' style={styles}>bubblify@bubblify.com</a></p>
+                <p className='contactInfoText' style={styles}><strong>Address: </strong>Bubble Street 999</p>
+                <p className='contactInfoText' style={styles}><strong>Telephone: </strong>+354 421-0000</p>
+                <p className='contactInfoText' style={styles}><strong>Email: </strong><a href='mailto:bubblify@bubblify.com' style={styles}>bubblify@bubblify.com</a></p>
             </div>
 
         </div>
