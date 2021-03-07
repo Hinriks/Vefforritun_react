@@ -14,8 +14,17 @@ export const addToCart = (item) => {
 
 export const removeFromCart = (itemId) => {
     let storageCart = JSON.parse(localStorage.getItem('cart'));
-    let items = storageCart.filter(item => item.id !== itemId);
-    localStorage.setItem('cart', JSON.stringify(items))
+    let itemToRemove = 0;
+    for (let item of storageCart) {
+        if (item.id === itemId) {
+            itemToRemove = item
+        }
+    }
+    const index = storageCart.indexOf(itemToRemove);
+    if (index > -1) {
+      storageCart.splice(index, 1);
+    }
+    localStorage.setItem('cart', JSON.stringify(storageCart))
 };
 
 export const countCartItems = () => {
