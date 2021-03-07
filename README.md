@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Starting the server
 
+The server was not changed in any way, so it's not in this directory.
+
 In the server directory, you can run:
 
 ### `npm start`
