@@ -4,7 +4,8 @@ import CheckoutSteps from '../CheckoutSteps';
 import DeliveryMethod from '../DeliveryMethod';
 import Delivered from '../Delivered';
 import Pickup from '../Pickup';
-import ReviewOrder from '../ReviewOrder';
+//import ReviewOrder from '../ReviewOrder';
+import OrderReview from '../OrderReview';
 import { getCart } from '../../services/cartService';
 
 class Checkout extends React.Component {
@@ -56,7 +57,7 @@ class Checkout extends React.Component {
                 <>
                     <h1>Checkout</h1>
                     <CheckoutSteps step={2} />
-                    <ReviewOrder deliveryMethod={deliveryOption} items={items} incStep={ () => this.setState({ checkoutStep: this.state.checkoutStep + 1 }) } />
+                    <OrderReview deliveryMethod={deliveryOption} items={items} incStep={ () => this.setState({ checkoutStep: this.state.checkoutStep + 1 }) } />
                 </>
             )
         } else if (checkoutStep == 4) {
