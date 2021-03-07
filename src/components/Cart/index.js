@@ -1,5 +1,6 @@
 import React from 'react';
 import { getCart, removeFromCart } from '../../services/cartService';
+import PreviousOrders from '../PreviousOrder';
 import styles from './styles.css'
 
 class Cart extends React.Component {
@@ -41,6 +42,7 @@ class Cart extends React.Component {
                     <p>Fill it now with our fun and unique bubbles!</p>
                 </div>
             }
+            <PreviousOrders/>
         </div>
         )
     }
