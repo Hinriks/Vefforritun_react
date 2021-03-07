@@ -21,10 +21,15 @@ const HomePage = () => {
             <h1>Welcome to Bubblify!</h1>
             <h5>Where we got the perfect bubbles for you!</h5>
 
-            <div className='productsContainer' style={styles}>
+            <hr/>
+
+            <div style={styles}>
                 <BubblesHomePage/>
+                <hr/>
                 <BundlesHomePage/>
             </div>
+
+            <hr/>
 
             <h3 className='authorsText' style={styles}>Authors of the Bubblify website:</h3>
             <div className='authors'>

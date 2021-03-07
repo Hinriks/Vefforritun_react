@@ -12,8 +12,8 @@ const BundlesHomePage = () => {
     }, [bundles]);
 
     return (
-        <div className='productsContainer' style={styles}>
-            <h3>Bundles</h3>
+        <div className='bundlesHomePageContainer' style={styles}>
+            <h2>Bundles</h2>
             {Object.values(bundles).map(item =>
                 <a href='#' style={{margin: '40px'}}>
                 <div key={item.id}>
