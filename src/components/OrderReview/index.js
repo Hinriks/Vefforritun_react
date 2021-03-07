@@ -2,7 +2,13 @@
 import React from 'react';
 import styles from './style.css';
 
-const OrderReview = () => {
+const OrderReview = (props) => {
+    function getTotalPrice() {
+        let items = props.items
+        let price = 0
+        Object.values(items).map(item => price = price + parseInt(item.price))
+        return price
+    }
     return (
 
         <div className="container orderReviewContainer" style={styles}>
@@ -17,51 +23,31 @@ const OrderReview = () => {
                                 <table className="table borderless">
                                     <thead>
                                     <tr>
-                                        <td><strong>Your Cart: # item</strong></td>
-                                        <td></td>
-                                        <td></td>
+                                        <td><strong>Your Cart: {Object.keys(props.items).length} items</strong></td>
                                         <td></td>
                                         <td></td>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    {/*foreach ($order->lineItems as $line) or some such thing here*/}
-                                    <tr>
-                                        <td className="col-md-3">
-                                            <div className="media">
-                                                <a className="thumbnail pull-left" href="#"> <img className="media-object"
-                                                                                                  src="http://lorempixel.com/460/250/"
-                                                                                                  style={{width: '72px', height: '72px'}} /> </a>
-                                                <div className="media-body">
-                                                    <h5 className="media-heading"> Product Name</h5>
+                                    { Object.values(props.items).map((item, index) => 
+                                        <tr key={index}>
+                                            <td className="col-md-3">
+                                                <div className="media">
+                                                    <a className="thumbnail pull-left" href="#"> <img className="media-object"
+                                                                                                    src={item.image}
+                                                                                                    style={{width: '72px', height: '72px'}} /> </a>
+                                                    <div className="media-body">
+                                                        <h5 className="media-heading">{ item.name }</h5>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </td>
-                                        <td className="text-center">$10.99</td>
-                                        <td className="text-center">1</td>
-                                        <td className="text-right">$32.99</td>
-                                        <td className="text-right">
-                                            <button type="button" className="btn btn-danger">Remove</button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td className="col-md-3">
-                                            <div className="media">
-                                                <a className="thumbnail pull-left" href="#"> <img className="media-object"
-                                                                                                  src="http://lorempixel.com/460/250/"
-                                                                                                  style={{width: '72px', height: '72px'}} /> </a>
-                                                <div className="media-body">
-                                                    <h5 className="media-heading"> Product Name</h5>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td className="text-center">$10.99</td>
-                                        <td className="text-center">1</td>
-                                        <td className="text-right"> $32.99</td>
-                                        <td className="text-right">
-                                            <button type="button" className="btn btn-danger">Remove</button>
-                                        </td>
-                                    </tr>
+                                            </td>
+                                            <td className="text-center"></td>
+                                            <td className="text-right">{ item.price } kr.</td>
+                                            {/* <td className="text-right">
+                                                <button type="button" className="btn btn-danger">Remove</button>
+                                            </td> */}
+                                        </tr>
+                                    )}
                                     </tbody>
                                 </table>
                             </div>
@@ -76,25 +62,25 @@ const OrderReview = () => {
                         </div>
                         <div className="panel-body">
                             <div className="col-md-12">
-                                <strong>Subtotal (# item)</strong>
-                                <div className="pull-right"><span>$</span><span>200.00</span></div>
+                                <strong>Subtotal ({Object.keys(props.items).length} items)</strong>
+                                <div className="pull-right"><span>{getTotalPrice()} kr.</span></div>
                             </div>
-                            <div className="col-md-12">
+                            {/* <div className="col-md-12">
                                 <strong>Tax</strong>
                                 <div className="pull-right"><span>$</span><span>200.00</span></div>
-                            </div>
+                            </div> */}
                             <div className="col-md-12">
-                                <small>Shipping</small>
-                                <div className="pull-right"><span>-</span></div>
+                                <strong>Delivery Method</strong>
+                                <div className="pull-right"><span>{props.deliveryMethod}</span></div>
                                 <hr />
                             </div>
                             <div className="col-md-12">
                                 <strong>Order Total</strong>
-                                <div className="pull-right"><span>$</span><span>150.00</span></div>
+                                <div className="pull-right"><span>{getTotalPrice()} kr.</span></div>
                                 <hr />
                             </div>
 
-                            <button type="button" className="btn btn-primary btn-lg btn-block">Confirm Order</button>
+                            <button type="button" onClick={() => { props.incStep() }} className="btn btn-primary btn-lg btn-block">Confirm Order</button>
 
                         </div>
 
