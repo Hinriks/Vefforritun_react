@@ -101,8 +101,22 @@ class Checkout extends React.Component {
                 <>
                     <h1>Checkout</h1>
                     <CheckoutSteps step={3} />
-                    <h1>Finito!</h1>
-                    <p>Your order has been placed</p>
+                    <h1 className="text-center">Congratulations {this.state.customer.name}!</h1>
+                    <h4 className="text-center">Your order has been placed</h4>
+                    {deliveryOption === "Delivery" ?
+                        <div className="text-center">
+                            <div>You chose to have your order delivered to {this.state.customer.address}, {this.state.customer.city}, {this.state.customer.zip}.</div>
+                            <div>You can expect to recieve your order within 3 business days.</div>
+                            <a className="text-center" href="/">Return to store</a>
+                        </div>
+                     :
+                     <div className="text-center">
+                        <div>You chose to pick up your order at our shop, Bubble Street 999.</div>
+                        <div>Your order will be ready for pick up within two hours.</div>
+                        <a className="text-center" href="/">Return to store</a>
+                    </div>
+                     }
+                    
                 </>
             )
         }
