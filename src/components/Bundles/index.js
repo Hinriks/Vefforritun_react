@@ -14,7 +14,6 @@ const Bundles = () => {
         <div className='container'>
             <h1 className='title'>Bundles</h1>
             <div className="bundleContainer">
-                {console.log("bundles: " + Object.values(bundles))}
                 {Object.values(bundles).map(item =>
                     <div className="col-md-4" key={item.id}>
                         <h2 className='bundleName' style={styles}>{item.name}</h2>
