@@ -7,24 +7,51 @@ import Pickup from '../Pickup';
 //import ReviewOrder from '../ReviewOrder';
 import OrderReview from '../OrderReview';
 import { getCart } from '../../services/cartService';
+import { storeOrder } from '../../services/orderService';
 
 class Checkout extends React.Component {
     state = {
         checkoutStep: 1,
         deliveryOption: "",
         items: {},
+        customer: {}
     }
     
     async componentDidMount() {
         this.setState({ 
             checkoutStep: 1, 
             items: await getCart() 
-        })
+        });
     }    
 
     setDeliveryMethod(method) {
-        this.setState({ deliveryOption: method })
+        this.setState({ deliveryOption: method });
     }
+
+    saveCustomer(name, phone, address="", city="", zip="") {
+        let customer = {}
+        customer['name'] = name
+        customer['phone'] = phone
+        customer['address'] = address
+        customer['city'] = city
+        customer['zip'] = zip
+        this.setState({
+            customer: customer
+        })
+        localStorage.setItem('customer', JSON.stringify(customer))
+    }
+
+    saveOrder() {
+        const { deliveryOption, items, customer } = this.state;
+        let orderObj = {};
+        orderObj['delivery'] = deliveryOption;
+        orderObj['items'] = items;
+        let today = new Date();
+        orderObj['date'] = today.getDate() + "/" + (today.getMonth()+1) + "/" +  today.getFullYear();
+        orderObj['customer'] = customer;
+        storeOrder(orderObj, customer.phone);
+    }
+    
 
 
     render() {
@@ -40,9 +67,15 @@ class Checkout extends React.Component {
         } else if (checkoutStep == 2) {
             let deliveryMethod;
             if (deliveryOption == "Delivery") {
-                deliveryMethod = <Delivered incStep={ () => this.setState({ checkoutStep: this.state.checkoutStep + 1 }) } />
+                deliveryMethod = <Delivered 
+                                    incStep={ () => this.setState({ checkoutStep: this.state.checkoutStep + 1 }) } 
+                                    saveCustomer={ this.saveCustomer.bind(this) }
+                                    />
             } else {
-                deliveryMethod = <Pickup incStep={ () => this.setState({ checkoutStep: this.state.checkoutStep + 1 }) } />
+                deliveryMethod = <Pickup 
+                                    incStep={ () => this.setState({ checkoutStep: this.state.checkoutStep + 1 }) } 
+                                    saveCustomer={ this.saveCustomer.bind(this) }
+                                    />
             }
             return (
                 <>
@@ -52,12 +85,16 @@ class Checkout extends React.Component {
                 </>
             )
         } else if (checkoutStep == 3) {
-            console.log(items)
             return (
                 <>
                     <h1>Checkout</h1>
                     <CheckoutSteps step={2} />
-                    <OrderReview deliveryMethod={deliveryOption} items={items} incStep={ () => this.setState({ checkoutStep: this.state.checkoutStep + 1 }) } />
+                    <OrderReview 
+                        deliveryMethod={deliveryOption} 
+                        items={items} 
+                        incStep={ () => this.setState({ checkoutStep: this.state.checkoutStep + 1 }) } 
+                        saveOrder={ () => this.saveOrder() }
+                        />
                 </>
             )
         } else if (checkoutStep == 4) {

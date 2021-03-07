@@ -1,4 +1,4 @@
-import * as constants from "./constants";
+import * as constants from "../constants";
 
 export const getBubbles = async () => {
     const result = await fetch(constants.BUBBLES_URL);

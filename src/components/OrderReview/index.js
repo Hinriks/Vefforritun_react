@@ -80,7 +80,7 @@ const OrderReview = (props) => {
                                 <hr />
                             </div>
 
-                            <button type="button" onClick={() => { props.incStep() }} className="btn btn-primary btn-lg btn-block">Confirm Order</button>
+                            <button type="button" onClick={() => { props.incStep(); props.saveOrder() }} className="btn btn-primary btn-lg btn-block">Confirm Order</button>
 
                         </div>
 
