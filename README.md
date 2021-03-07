@@ -21,5 +21,6 @@ In the project directory, you can run:
 Runs the website in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+##
 
 This website is an assignment for T-427-WEPO and was made by Hinrik Snær Hjörleifsson, Kumasi Máni Hodge-Carr, and Patrekur Örn Friðriksson.
