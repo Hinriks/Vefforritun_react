@@ -1,5 +1,6 @@
 import React from 'react';
-import { addToCart, clearCart, getCart, removeFromCart } from '../../services/cartService';
+import PropTypes from "prop-types";
+import { addToCart, clearCart } from '../../services/cartService';
 import { getOrder } from '../../services/orderService';
 import styles from './styles.css'
 
@@ -64,7 +65,7 @@ class PreviousOrders extends React.Component {
                         <div className="card-title text-center">Ordered on { order.date }</div>
                         {order.items.map((item, index) =>
                             <li className="list-group-item cart-item" key={index}>
-                                <img className="cart-item-image" src={item.image}/>
+                                <img className="cart-item-image" src={item.image} alt={item.name} />
                                 <span className="cart-item-name">{item.name}</span>
                                 <span className="float-right pt-2">{item.price} kr.</span>
                             </li>
@@ -73,7 +74,7 @@ class PreviousOrders extends React.Component {
                             <div className="btn btn-primary text-center" onClick={ () => this.addOrderToCart() }>Order again</div>
                         </div>
                     </div>
-                    
+
                 </div>
                 :
                 <div>
@@ -84,5 +85,15 @@ class PreviousOrders extends React.Component {
         )
     }
 }
+
+PreviousOrders.propTypes = {
+    order: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        image: PropTypes.string.isRequired,
+    }))
+};
 
 export default PreviousOrders;

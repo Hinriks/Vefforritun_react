@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import styles from './style.css';
 import { clearCart } from "../../services/cartService";
 
@@ -33,9 +34,10 @@ const OrderReview = (props) => {
                                         <tr key={index}>
                                             <td className="col-md-3">
                                                 <div className="media">
-                                                    <a className="thumbnail pull-left" href="#"> <img className="media-object"
+                                                    <div className="thumbnail pull-left"> <img className="media-object"
                                                                                                     src={item.image}
-                                                                                                    style={{width: '72px', height: '72px'}} /> </a>
+                                                                                                    style={{width: '72px', height: '72px'}}
+                                                                                                    alt={item.name} /> </div>
                                                     <div className="media-body">
                                                         <h5 className="media-heading">{ item.name }</h5>
                                                     </div>
@@ -90,6 +92,16 @@ const OrderReview = (props) => {
             </div>
         </div>
     )
+};
+
+OrderReview.propTypes = {
+    items: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        image: PropTypes.string.isRequired,
+    }))
 };
 
 export default OrderReview;

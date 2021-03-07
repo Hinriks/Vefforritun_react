@@ -23,6 +23,10 @@
     color: black;
 }
 
+.bubblesHomePageContainer a {
+    color: black;
+}
+
 .bubblesHomePageContainer {
     margin-top: 50px;
 }

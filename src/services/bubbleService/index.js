@@ -14,10 +14,12 @@ export const getBundles = async () => {
 
 export const getBubbleById = async id => {
     let bubbles = await getBubbles();
-    return bubbles.find(n => n.id == id);
+    /* console.log(typeof bubbles[0].id)
+    console.log(typeof id) */
+    return bubbles.find(n => n.id === parseInt(id));
 }
 
 export const getBundleById = async id => {
     let bundles = await getBundles();
-    return bundles.find(n => n.id == id);
+    return bundles.find(n => n.id === parseInt(id));
 }

@@ -20,3 +20,11 @@
 .checkoutButton {
     margin-top: 20px;
 }
+
+.cart-item-price {
+    margin-right: 40px;
+}
+
+.total-price {
+    margin-top: 10px;
+}

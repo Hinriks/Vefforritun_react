@@ -2,16 +2,10 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styles from './style.css';
 import logo from '../../resources/logo.jpg';
-import { countCartItems } from '../../services/cartService';
-import { render } from '@testing-library/react';
 
 class NavBar extends React.Component {
-    state = {
-        cartItemsCount: countCartItems()
-    };
 
     render() {
-        let { cartItemsCount } = this.state;
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark box-shadow">
                 <div className="container">
@@ -40,14 +34,14 @@ class NavBar extends React.Component {
                             <NavLink
                                 exact
                                 to="/about"
-                                className="nav-link">About us </NavLink>
+                                className="nav-link">About us</NavLink>
                         </li>
 
                         <li className="nav-item">
                             <NavLink
                                 exact
                                 to="/cart"
-                                className="nav-link">Cart ({cartItemsCount})</NavLink>
+                                className="nav-link">Cart</NavLink>
                         </li>
                     </ul>
                 </div >

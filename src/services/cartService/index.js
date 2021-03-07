@@ -27,12 +27,6 @@ export const removeFromCart = (itemId) => {
     localStorage.setItem('cart', JSON.stringify(storageCart))
 };
 
-export const countCartItems = () => {
-    let items = getCart();
-    if (items) return items.length;
-    else return 0
-};
-
 export const clearCart = () => {
     localStorage.setItem('cart', JSON.stringify([]))
 };

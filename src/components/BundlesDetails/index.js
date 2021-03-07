@@ -3,6 +3,8 @@ import { getBubbleById } from '../../services/bubbleService';
 import { getBundleById } from '../../services/bubbleService'
 import { addToCart } from '../../services/cartService';
 import styles from './style.css';
+import PropTypes from "prop-types";
+import Bundles from "../Bundles";
 
 class BundlesDetails extends React.Component {
     state = {
@@ -28,6 +30,14 @@ class BundlesDetails extends React.Component {
         });
     }
 
+    totalPrice() {
+        let price = 0;
+        for (const obj of this.state.bubbles) {
+            price += obj.price;
+        }
+        return price;
+    }
+
     render() {
 
         const { bubbles, bundle } = this.state;
@@ -39,19 +49,40 @@ class BundlesDetails extends React.Component {
                     <div className="row">
                         {bubbles.map((item, index) =>
                             <div key={index} className="card m-2 bundle-card">
-                                <img className="cart-img-top bundle-item-img" src={item.image}/>
+                                <img className="cart-img-top bundle-item-img" src={item.image} alt={item.name}/>
                                 <div className="card-body text-center">
                                     <h5 className="card-title">{item.name}</h5>
+                                    <strong>{item.price} kr.</strong>
                                     <p className="card-text">{item.description}</p>
                                 </div>
                             </div>
                             )}
                     </div>
                 </div>
-                <div className="btn btn-primary mt-2" onClick={ () => { this.addBundleToCart(); window.location.reload(); } }>Add to cart</div>
+                <div>
+                    <h5>Price: <strong>{this.totalPrice()} kr.</strong></h5>
+                </div>
+                <div className="btn btn-primary mt-2" onClick={ () => this.addBundleToCart() }>Add to cart</div>
             </div>
         )
     }
+}
+
+Bundles.propTypes = {
+    bundle: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        image: PropTypes.string.isRequired,
+    }),
+    bubbles: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        image: PropTypes.string.isRequired,
+    }))
 };
 
 
