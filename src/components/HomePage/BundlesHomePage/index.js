@@ -15,13 +15,14 @@ const BundlesHomePage = () => {
         <div className='bundlesHomePageContainer' style={styles}>
             <h2>Bundles</h2>
             {Object.values(bundles).map(item =>
-                <a href='#' style={{margin: '40px'}}>
+                <a href={"/bundles/" + item.id} style={{margin: '40px'}}>
                 <div key={item.id}>
                     <h3 className='bundleName' style={styles}>{item.name}</h3>
                     <BundlesListHomePage key={item.id} item={item} />
                 </div>
                 </a>
             )}
+            <h4 className="py-2">Click <a href='/bundles'>here</a> to see all bundles.</h4>
         </div>
     )
 };
