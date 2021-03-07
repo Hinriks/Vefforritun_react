@@ -23,8 +23,8 @@ class Cart extends React.Component {
         <div style={styles} className="cart-wrap">
             <h1>Cart</h1>
             <ul className="list-group">
-            {items.map(item =>
-                <li className="list-group-item cart-item" key={item.id}>
+            {items.map((item, index) =>
+                <li className="list-group-item cart-item" key={index}>
                     <img className="cart-item-image" src={item.image}/>
                     <span className="cart-item-name">{item.name}</span>
                     <span onClick={() => { this.removeFromCart(item.id) }} className="btn btn-danger float-right cart-item-remove">Remove</span>
