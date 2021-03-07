@@ -11,13 +11,14 @@ class BundlesDetails extends React.Component {
     };
 
     async componentDidMount() {
-        this.setState({ bundles: await getBundleById(this.props.match.params.id) })
+        this.setState({ bundles: await getBundleById(this.props.match.params.id) });
         let bubbleIds = this.state.bundles.items;
         for (const ids of bubbleIds) {
             this.state.bubbles.push(await getBubbleById(ids));
         }
-
-
+        this.setState({
+            bubbles: this.state.bubbles,
+        })
     }
 
     render() {
@@ -26,8 +27,6 @@ class BundlesDetails extends React.Component {
         return (
             <div className="row" style={styles}>
                 <h2> {bundles.name} Review </h2>
-
-
 
             </div>
         )
