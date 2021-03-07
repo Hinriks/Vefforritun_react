@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import {getBundles} from '../../services/bubbleService';
+import React from 'react';
 import styles from './style.css';
 import BubblesHomePage from "./BubblesHomePage";
 import BundlesHomePage from "./BundlesHomePage";
@@ -8,13 +7,6 @@ import kumasi from '../../resources/kumasi.jpg';
 import patrekur from '../../resources/patrekur.jpg';
 
 const HomePage = () => {
-
-    const [bundles, setBundles] = useState({});
-    useEffect(() => {
-        (async () => {
-            setBundles(await getBundles());
-        })();
-    }, [bundles]);
 
     return (
         <div className='container'>

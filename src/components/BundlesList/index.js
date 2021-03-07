@@ -1,9 +1,11 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import { getBubbleById } from '../../services/bubbleService'
 import BubblePreviewHomePage from "../HomePage/BundlesHomePage/BubblePreviewHomePage";
 import styles from "../HomePage/BundlesHomePage/BundlesListHomePage/style.css";
+import Bundles from "../Bundles";
 
-class BundleList extends React.Component {
+class BundlesList extends React.Component {
     state = {
         bubbles: [],
     };
@@ -29,4 +31,14 @@ class BundleList extends React.Component {
     }
 }
 
-export default BundleList;
+BundlesList.propTypes = {
+    bubbles: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        image: PropTypes.string.isRequired,
+    }).isRequired)
+};
+
+export default BundlesList;

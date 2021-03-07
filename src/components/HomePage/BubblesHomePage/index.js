@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from "prop-types";
 import {getBubbles} from '../../../services/bubbleService';
 import BubblePreview from "../../BubblePreview";
 import styles from '../style.css'
@@ -20,11 +21,21 @@ const BubblesHomePage = () => {
                         <BubblePreview item={item}/>
                     </div>
                 )}
-                
+
                 </div>
-                <h4>Click <a href='/bubbles'>here</a> to see all bubbles.</h4>
+               <a href='/bubbles'><h4>Click here to see all bubbles.</h4></a>
             </div>
     )
+};
+
+BubblesHomePage.propTypes = {
+    bubbles: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        image: PropTypes.string.isRequired,
+    }))
 };
 
 export default BubblesHomePage;

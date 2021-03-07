@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import styles from './style.css';
 import { clearCart } from "../../services/cartService";
 
@@ -90,6 +91,16 @@ const OrderReview = (props) => {
             </div>
         </div>
     )
+};
+
+OrderReview.propTypes = {
+    items: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        image: PropTypes.string.isRequired,
+    }))
 };
 
 export default OrderReview;

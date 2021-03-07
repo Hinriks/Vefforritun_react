@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import { addToCart, clearCart, getCart, removeFromCart } from '../../services/cartService';
 import { getOrder } from '../../services/orderService';
 import styles from './styles.css'
@@ -73,7 +74,7 @@ class PreviousOrders extends React.Component {
                             <div className="btn btn-primary text-center" onClick={ () => this.addOrderToCart() }>Order again</div>
                         </div>
                     </div>
-                    
+
                 </div>
                 :
                 <div>
@@ -84,5 +85,15 @@ class PreviousOrders extends React.Component {
         )
     }
 }
+
+PreviousOrders.propTypes = {
+    order: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        image: PropTypes.string.isRequired,
+    }))
+};
 
 export default PreviousOrders;

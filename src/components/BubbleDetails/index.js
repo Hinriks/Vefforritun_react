@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { getBubbleById } from '../../services/bubbleService';
 import { addToCart } from '../../services/cartService';
 import styles from './style.css';
@@ -30,6 +31,16 @@ class BubbleDetails extends React.Component {
             </div>
         )
     }
+}
+
+BubbleDetails.propTypes = {
+    bubble: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        image: PropTypes.string.isRequired,
+    }))
 };
 
 export default BubbleDetails;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import styles from './style.css';
 
 const CheckoutSteps = (props) => {
@@ -40,6 +41,12 @@ const CheckoutSteps = (props) => {
             </div>
         )
     }
+};
+
+CheckoutSteps.propTypes = {
+    props: PropTypes.shape({
+        step: PropTypes.number.isRequired,
+    })
 };
 
 export default CheckoutSteps;

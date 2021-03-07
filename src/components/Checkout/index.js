@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from "prop-types";
 import styles from './style.css';
 import CheckoutSteps from '../CheckoutSteps';
 import DeliveryMethod from '../DeliveryMethod';
 import Delivered from '../Delivered';
 import Pickup from '../Pickup';
-//import ReviewOrder from '../ReviewOrder';
 import OrderReview from '../OrderReview';
 import { getCart } from '../../services/cartService';
 import { storeOrder } from '../../services/orderService';
@@ -15,7 +15,7 @@ class Checkout extends React.Component {
         deliveryOption: "",
         items: {},
         customer: {}
-    }
+    };
 
     async componentDidMount() {
         this.setState({
@@ -108,5 +108,23 @@ class Checkout extends React.Component {
             )
         }
     }
+}
+
+Checkout.propTypes = {
+    items: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        image: PropTypes.string.isRequired,
+    })),
+    customer: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        phone: PropTypes.string.isRequired,
+        address: PropTypes.string.isRequired,
+        city: PropTypes.string.isRequired,
+        zip: PropTypes.string.isRequired,
+    })
 };
+
 export default Checkout;

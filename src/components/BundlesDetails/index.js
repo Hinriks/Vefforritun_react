@@ -3,6 +3,8 @@ import { getBubbleById } from '../../services/bubbleService';
 import { getBundleById } from '../../services/bubbleService'
 import { addToCart } from '../../services/cartService';
 import styles from './style.css';
+import PropTypes from "prop-types";
+import Bundles from "../Bundles";
 
 class BundlesDetails extends React.Component {
     state = {
@@ -47,7 +49,7 @@ class BundlesDetails extends React.Component {
                     <div className="row">
                         {bubbles.map((item, index) =>
                             <div key={index} className="card m-2 bundle-card">
-                                <img className="cart-img-top bundle-item-img" src={item.image}/>
+                                <img className="cart-img-top bundle-item-img" src={item.image} alt='Bubble image'/>
                                 <div className="card-body text-center">
                                     <h5 className="card-title">{item.name}</h5>
                                     <strong>{item.price} kr.</strong>
@@ -64,6 +66,23 @@ class BundlesDetails extends React.Component {
             </div>
         )
     }
+}
+
+Bundles.propTypes = {
+    bundle: PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        image: PropTypes.string.isRequired,
+    }),
+    bubbles: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        image: PropTypes.string.isRequired,
+    }))
 };
 
 

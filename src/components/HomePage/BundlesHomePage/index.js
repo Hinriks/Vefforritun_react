@@ -22,7 +22,7 @@ const BundlesHomePage = () => {
                 </div>
                 </a>
             )}
-            <h4 className="py-2">Click <a href='/bundles'>here</a> to see all bundles.</h4>
+            <a href='/bundles'><h4 className="py-2">Click here to see all bundles.</h4></a>
         </div>
     )
 };

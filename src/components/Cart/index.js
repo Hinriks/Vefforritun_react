@@ -14,7 +14,7 @@ class Cart extends React.Component {
 
     removeFromCart(itemId) {
         let new_items = this.state.items.filter(item => item.id != itemId)
-        this.setState({items: new_items})
+        this.setState({items: new_items});
         removeFromCart(itemId)
     }
 

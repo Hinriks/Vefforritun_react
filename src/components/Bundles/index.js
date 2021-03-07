@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { getBundles } from '../../services/bubbleService';
 import BundleList from '../BundlesList';
 import styles from './styles.css'
@@ -25,6 +26,16 @@ const Bundles = () => {
             }
         </div >
     )
+};
+
+Bundles.propTypes = {
+    bundles: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        name: PropTypes.string.isRequired,
+        description: PropTypes.string.isRequired,
+        price: PropTypes.number.isRequired,
+        image: PropTypes.string.isRequired,
+    }))
 };
 
 export default Bundles;
