@@ -43,7 +43,7 @@ class PreviousOrders extends React.Component {
             <h2>Your orders</h2>
             <p>Search for previous orders</p>
             <div className="row input-group pb-4 pl-3">
-                <input type="tel" value={phone} onChange={this.handlePhoneChange.bind(this)}/>
+                <input type="tel" placeholder="Your telephone" value={phone} onChange={this.handlePhoneChange.bind(this)}/>
                 <div className="input-group-append">
                     <div className="btn btn-primary" onClick={() => this.findOrder()}>Search</div>
                 </div>
@@ -56,7 +56,7 @@ class PreviousOrders extends React.Component {
                             <li className="list-group-item cart-item" key={index}>
                                 <img className="cart-item-image" src={item.image}/>
                                 <span className="cart-item-name">{item.name}</span>
-                                <span className="pl-5">{item.price} kr.</span>
+                                <span className="float-right pt-2">{item.price} kr.</span>
                             </li>
                             )}
                         <div className="text-center pt-3">
