@@ -6,6 +6,7 @@ import About from './components/About';
 import Bundles from './components/Bundles';
 import Cart from './components/Cart';
 import BubbleDetails from './components/BubbleDetails';
+import Checkout from './components/Checkout';
 import Delivered from './components/Delivered';
 import Pickup from './components/Pickup';
 
@@ -22,6 +23,9 @@ function App() {
           <Route exact path="/about" component={About} />
           <Route exact path="/cart" component={Cart} />
           <Route exact path="/bubbles/:id" component={BubbleDetails} />
+          <Route exact path="/checkout" component={Checkout} />
+          <Route exact path="/checkout/1" component={Pickup} />
+          <Route exact path="/checkout/2" component={Delivered} />
         </Switch>
       </div>
     </div>

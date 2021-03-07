@@ -31,6 +31,7 @@ class Cart extends React.Component {
                 </li>
             )}
             </ul>
+            <a href="/checkout" className="btn btn-primary">Checkout</a>
         </div>
         )
     }

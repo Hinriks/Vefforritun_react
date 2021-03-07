@@ -4,7 +4,7 @@ import styles from './style.css';
 
 const BubblePreview = ({ item }) => {
     return (
-        <div className="card mb-4 box-shadow" style={styles}>
+        <div className="card mb-4 box-shadow bubble-preview" style={styles}>
             <a href={"/bubbles/" + item.id} className='image'>
                 <img className="card-img-top" src={item.image} alt={item.name}/>
             </a>

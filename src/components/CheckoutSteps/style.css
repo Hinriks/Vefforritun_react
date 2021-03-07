@@ -1,0 +1,17 @@
+.steps-wrap {
+    height: 50px;
+}
+.steps-cell:first-child {
+    border-radius: 50px 0 0 50px;
+}
+.steps-cell:last-child {
+    border-radius: 0 50px 50px 0;
+}
+.steps-cell {
+    height: 40px;
+}
+
+.cell-done {
+    background-color: rgb(104, 169, 245);
+    color: white
+}
