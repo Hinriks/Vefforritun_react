@@ -16,13 +16,13 @@ class Checkout extends React.Component {
         items: {},
         customer: {}
     }
-    
+
     async componentDidMount() {
-        this.setState({ 
-            checkoutStep: 1, 
-            items: await getCart() 
+        this.setState({
+            checkoutStep: 1,
+            items: await getCart()
         });
-    }    
+    }
 
     setDeliveryMethod(method) {
         this.setState({ deliveryOption: method });
@@ -51,7 +51,7 @@ class Checkout extends React.Component {
         orderObj['customer'] = customer;
         storeOrder(orderObj, customer.phone);
     }
-    
+
 
 
     render() {
@@ -67,13 +67,13 @@ class Checkout extends React.Component {
         } else if (checkoutStep == 2) {
             let deliveryMethod;
             if (deliveryOption == "Delivery") {
-                deliveryMethod = <Delivered 
-                                    incStep={ () => this.setState({ checkoutStep: this.state.checkoutStep + 1 }) } 
+                deliveryMethod = <Delivered
+                                    incStep={ () => this.setState({ checkoutStep: this.state.checkoutStep + 1 }) }
                                     saveCustomer={ this.saveCustomer.bind(this) }
                                     />
             } else {
-                deliveryMethod = <Pickup 
-                                    incStep={ () => this.setState({ checkoutStep: this.state.checkoutStep + 1 }) } 
+                deliveryMethod = <Pickup
+                                    incStep={ () => this.setState({ checkoutStep: this.state.checkoutStep + 1 }) }
                                     saveCustomer={ this.saveCustomer.bind(this) }
                                     />
             }
@@ -89,10 +89,10 @@ class Checkout extends React.Component {
                 <>
                     <h1>Checkout</h1>
                     <CheckoutSteps step={2} />
-                    <OrderReview 
-                        deliveryMethod={deliveryOption} 
-                        items={items} 
-                        incStep={ () => this.setState({ checkoutStep: this.state.checkoutStep + 1 }) } 
+                    <OrderReview
+                        deliveryMethod={deliveryOption}
+                        items={items}
+                        incStep={ () => this.setState({ checkoutStep: this.state.checkoutStep + 1 }) }
                         saveOrder={ () => this.saveOrder() }
                         />
                 </>
