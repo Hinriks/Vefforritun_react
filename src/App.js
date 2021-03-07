@@ -9,12 +9,9 @@ import BubbleDetails from './components/BubbleDetails';
 import Checkout from './components/Checkout';
 import Delivered from './components/Delivered';
 import Pickup from './components/Pickup';
-<<<<<<< HEAD
 import NotFound from './components/NotFound';
-=======
 import OrderReview from "./components/OrderReview";
 import HomePage from "./components/HomePage";
->>>>>>> 4ffd58e0ef35de768753a7acb6b9371159e427c0
 
 function App() {
   return (
