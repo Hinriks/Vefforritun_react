@@ -1,0 +1,21 @@
+
+.productsContainer {
+}
+
+.authorsText {
+    margin-top: 100px;
+}
+
+.authors {
+    display: flex;
+}
+
+.authors img {
+    width: 150px;
+    height: 200px;
+    margin-right: 50px;
+}
+
+.productsContainer a {
+    color: black;
+}

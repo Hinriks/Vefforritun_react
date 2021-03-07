@@ -1,9 +1,9 @@
 import React from 'react';
-import { getBubbleById } from '../../services/bubbleService'
-import BubblePreviewHomePage from "../HomePage/BundlesHomePage/BubblePreviewHomePage";
-import styles from "../HomePage/BundlesHomePage/BundlesListHomePage/style.css";
+import { getBubbleById } from '../../../../services/bubbleService'
+import BubblePreviewHomePage from "../BubblePreviewHomePage";
+import styles from './style.css';
 
-class BundleList extends React.Component {
+class BundlesListHomePage extends React.Component {
     state = {
         bubbles: [],
     };
@@ -24,9 +24,9 @@ class BundleList extends React.Component {
                 {bubbles.map(bubble =>
                     <BubblePreviewHomePage key={bubble.id} item={bubble} />
                 )}
-            </div >
+            </div>
         )
     }
 }
 
-export default BundleList;
+export default BundlesListHomePage;

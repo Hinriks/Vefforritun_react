@@ -10,6 +10,7 @@ import Checkout from './components/Checkout';
 import Delivered from './components/Delivered';
 import Pickup from './components/Pickup';
 import OrderReview from "./components/OrderReview";
+import HomePage from "./components/HomePage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <NavBar />
       <div className="container py-5">
         <Switch>
+          <Route exact path="/" component={HomePage} />
           <Route exact path="/bubbles" component={Bubbles} />
           <Route exact path="/bundles" component={Bundles} />
           <Route exact path="/about" component={About} />

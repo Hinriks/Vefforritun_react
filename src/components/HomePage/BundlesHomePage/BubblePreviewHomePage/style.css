@@ -1,0 +1,24 @@
+
+.bubble-preview {
+    min-height: 110px;
+    margin-right: 10px;
+    margin-left: 10px;
+    display: flex;
+}
+.bubbleImg {
+    height: 100px; /* To make loading look nice */
+    width: 100px;
+}
+
+.image:hover {
+    background-color: #f3f3f3;
+    opacity: 80%;
+}
+
+a > h5 {
+    color: black;
+}
+
+.card-title {
+    color: black;
+}
