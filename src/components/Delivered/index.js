@@ -32,22 +32,11 @@ class Delivered extends React.Component {
         });
     }
 
-    /* handleChange(event) {
-         const target = event.target;
-         const value = target.value;
-         const name = target.name;
- 
-         this.setState({
-             [name]: value
-         });
-     }
-     */
-
     validateForm() {
         const { name, address, phone, city, zip } = this.state.fields;
         const errors = {};
 
-        if (name === '') { errors.nameError = 'Fyll name is required.'; }
+        if (name === '') { errors.nameError = 'Full name is required.'; }
         if (address === '') { errors.addressError = 'Address is required.'; }
         if (phone === '') { errors.phoneError = 'Phone is required.'; }
         if (city === '') { errors.cityError = 'City is required.'; }
@@ -61,28 +50,25 @@ class Delivered extends React.Component {
         return true;
     }
 
-    submitForm(event) {
-        event.preventDefault();
-
+    submitForm() {
         if (!this.validateForm()) {
             toastr.error('the Form was not succesfully submited', 'failed');
+            return false
         } else {
-            console.log(this.state.fields);
             toastr.success('the form was succesfully submitted', 'Success');
+            return true
         }
     }
 
+    checkForm(event) {
+        const { name, address, phone, city, zip } = this.state.fields;
+        event.preventDefault();
 
-    /*  
-    onChange={this.handleChange.bind(this)} className="form-control" id="inputName" placeholder="Full Name" />
-    onChange={this.handleChange.bind(this)} className="form-control" id="inputAddress" placeholder="1234 Main St" />
-    onChange={this.handleChange.bind(this)} type="tel" id="inputTelephone" placeholder="1-(555)-555-5555" />
-    onChange={this.handleChange.bind(this)} id="inputCity" />
-    onChange={this.handleChange.bind(this)} id="inputZip" />
-     
-     */
-
-
+        if (this.submitForm()) {
+            this.props.saveCustomer(name, phone, address, city, zip);
+            this.props.incStep();
+        }
+    }
 
     render() {
         const { name, address, phone, city, zip } = this.state.fields;
@@ -92,7 +78,7 @@ class Delivered extends React.Component {
 
             <div className='container delContainer' style={styles}>
                 <h1>Delivery</h1>
-                <Form onSubmit={event => this.submitForm(event)}>
+                <Form onSubmit={event => this.checkForm(event)}>
                     <div className="form-row">
                         <div className="form-group col-md-6">
                             <label htmlFor="inputName">Full Name</label>
@@ -140,10 +126,11 @@ class Delivered extends React.Component {
                                 onInput={event => this.onInput(event)} />
                         </div>
                     </div>
-                    <Input type="submit"
-                        value="Review order"
-                        className="btn btn-primary"
-                        style={{ float: 'right', marginTop: '10' }} />
+                    <div className="text-center">
+                        <button type="submit"
+                            className="btn btn-primary"
+                            style={{ marginTop: '10' }} >Review order</button>
+                    </div>
 
 
 

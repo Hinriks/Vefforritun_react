@@ -13,7 +13,6 @@ class BundlesListHomePage extends React.Component {
         let bubbleIds = this.props.item.items;
         for (const id of bubbleIds) {
             this.state.bubbles.push(await getBubbleById(id));
-            //console.log(this.state.bubbles)
         }
     }
 

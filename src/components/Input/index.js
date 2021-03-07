@@ -22,15 +22,15 @@ const Input = ({ value, onInput, type, errorMessage, label, name, htmlId }) => (
 );
 
 // validate 
-Input.PropTypes = {
+Input.propTypes = {
     /* The value provided to the html tag */
-    value: PropTypes.string.isRequired,
-    onInput: PropTypes.func.isRequired,
-    type: PropTypes.oneOf(['text', 'password', 'submit', 'email', 'number']).isRequired,
+    value: PropTypes.string,
+    onInput: PropTypes.func,
+    type: PropTypes.oneOf(['text', 'password', 'submit', 'email', 'number']),
     errorMessage: PropTypes.string, // ekki requeried 
     label: PropTypes.string,
-    name: PropTypes.string.isRequired,
-    htmlId: PropTypes.string.isRequired,
+    name: PropTypes.string,
+    htmlId: PropTypes.string,
 }
 
 export default Input;

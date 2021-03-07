@@ -13,6 +13,13 @@ import Pickup from './components/Pickup';
 import NotFound from './components/NotFound';
 import HomePage from "./components/HomePage";
 
+/* Made by:
+          Hinrik Snær Hjörleifsson
+          Patrekur Örn Friðriksson
+          Kumasi Máni Hodge Carr
+
+*/
+
 function App() {
   return (
     <div id="app">

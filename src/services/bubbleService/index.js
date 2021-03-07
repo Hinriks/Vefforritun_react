@@ -14,8 +14,6 @@ export const getBundles = async () => {
 
 export const getBubbleById = async id => {
     let bubbles = await getBubbles();
-    /* console.log(typeof bubbles[0].id)
-    console.log(typeof id) */
     return bubbles.find(n => n.id === parseInt(id));
 }
 
