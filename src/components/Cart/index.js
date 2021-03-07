@@ -18,6 +18,14 @@ class Cart extends React.Component {
         removeFromCart(itemId)
     }
 
+    totalPrice() {
+        let price = 0;
+        for (const obj of this.state.items) {
+            price += obj.price;
+        }
+        return price;
+    }
+
     render() {
         const { items } = this.state;
         return (
@@ -31,8 +39,12 @@ class Cart extends React.Component {
                             <img className="cart-item-image" src={item.image}/>
                             <span className="cart-item-name">{item.name}</span>
                             <span onClick={() => { this.removeFromCart(item.id); window.location.reload(); }} className="btn btn-danger float-right cart-item-remove">Remove</span>
+                            <span className='float-sm-right cart-item-price'><strong>{item.price} kr.</strong></span>
                         </li>
                     )}
+                    <div>
+                        <h5 className='total-price'>Total price: <strong>{this.totalPrice()} kr.</strong></h5>
+                    </div>
                     </ul>
                     <a href="/checkout" className="btn btn-primary checkoutButton" style={styles}>Checkout</a>
                 </div>

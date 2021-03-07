@@ -28,6 +28,14 @@ class BundlesDetails extends React.Component {
         });
     }
 
+    totalPrice() {
+        let price = 0;
+        for (const obj of this.state.bubbles) {
+            price += obj.price;
+        }
+        return price;
+    }
+
     render() {
 
         const { bubbles, bundle } = this.state;
@@ -42,11 +50,15 @@ class BundlesDetails extends React.Component {
                                 <img className="cart-img-top bundle-item-img" src={item.image}/>
                                 <div className="card-body text-center">
                                     <h5 className="card-title">{item.name}</h5>
+                                    <strong>{item.price} kr.</strong>
                                     <p className="card-text">{item.description}</p>
                                 </div>
                             </div>
                             )}
                     </div>
+                </div>
+                <div>
+                    <h5>Price: <strong>{this.totalPrice()} kr.</strong></h5>
                 </div>
                 <div className="btn btn-primary mt-2" onClick={ () => { this.addBundleToCart(); window.location.reload(); } }>Add to cart</div>
             </div>
