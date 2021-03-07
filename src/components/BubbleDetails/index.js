@@ -26,7 +26,7 @@ class BubbleDetails extends React.Component {
                         <strong>{ price } kr.</strong>
                     </p>
                     <p className="pt-1 details-description">{ description }</p>
-                    <div onClick={ () => { addToCart(this.state.bubble); window.location.reload(); } } className="btn btn-primary float-left">Add to cart</div>
+                    <div onClick={ () => addToCart(this.state.bubble) } className="btn btn-primary float-left">Add to cart</div>
                 </div>
             </div>
         )

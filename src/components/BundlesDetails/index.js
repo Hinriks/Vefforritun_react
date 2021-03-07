@@ -62,7 +62,7 @@ class BundlesDetails extends React.Component {
                 <div>
                     <h5>Price: <strong>{this.totalPrice()} kr.</strong></h5>
                 </div>
-                <div className="btn btn-primary mt-2" onClick={ () => { this.addBundleToCart(); window.location.reload(); } }>Add to cart</div>
+                <div className="btn btn-primary mt-2" onClick={ () => this.addBundleToCart() }>Add to cart</div>
             </div>
         )
     }
