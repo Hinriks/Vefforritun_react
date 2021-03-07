@@ -9,7 +9,12 @@ import BubbleDetails from './components/BubbleDetails';
 import Checkout from './components/Checkout';
 import Delivered from './components/Delivered';
 import Pickup from './components/Pickup';
+<<<<<<< HEAD
 import NotFound from './components/NotFound';
+=======
+import OrderReview from "./components/OrderReview";
+import HomePage from "./components/HomePage";
+>>>>>>> 4ffd58e0ef35de768753a7acb6b9371159e427c0
 
 function App() {
   return (
@@ -17,6 +22,7 @@ function App() {
       <NavBar />
       <div className="container py-5">
         <Switch>
+          <Route exact path="/" component={HomePage} />
           <Route exact path="/bubbles" component={Bubbles} />
           <Route exact path="/bundles" component={Bundles} />
           <Route exact path="/about" component={About} />

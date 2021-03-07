@@ -8,13 +8,14 @@ import { render } from '@testing-library/react';
 class NavBar extends React.Component {
     state = {
         cartItemsCount: countCartItems()
-    }
+    };
+
     render() {
         let { cartItemsCount } = this.state;
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark box-shadow">
                 <div className="container">
-                    <a className="navbar-brand logo" href="/bubbles">
+                    <a className="navbar-brand logo" href="/">
                         <img src={logo} className='img-fluid' style={styles} alt='Bubblify Logo'/>
                     </a>
 
@@ -54,6 +55,6 @@ class NavBar extends React.Component {
 
         )
     }
-};
+}
 
 export default NavBar;

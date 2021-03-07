@@ -1,0 +1,28 @@
+
+.authorsText {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.authors {
+    display: flex;
+    justify-content: center;
+}
+
+.authors img {
+    width: 150px;
+    height: 200px;
+    margin-right: 50px;
+}
+
+.bundlesHomePageContainer {
+    margin-top: 50px;
+}
+
+.bundlesHomePageContainer a {
+    color: black;
+}
+
+.bubblesHomePageContainer {
+    margin-top: 50px;
+}

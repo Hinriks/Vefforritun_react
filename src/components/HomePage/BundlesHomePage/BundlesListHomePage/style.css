@@ -1,0 +1,8 @@
+
+.bundleContainer {
+    border: 3px solid black;
+    border-radius: 5px;
+    padding: 40px;
+    justify-content: center;
+    box-shadow: 0 8px 6px -6px grey;
+}

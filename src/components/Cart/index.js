@@ -37,7 +37,7 @@ class Cart extends React.Component {
                 </div>
                 :
                 <div>
-                    <h4>Your Cart is empty.</h4>
+                    <h4>Your cart is empty.</h4>
                     <p>Fill it now with our fun and unique bubbles!</p>
                 </div>
             }
