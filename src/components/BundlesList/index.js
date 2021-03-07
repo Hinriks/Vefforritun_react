@@ -13,12 +13,11 @@ class BundleList extends React.Component {
     };
 
     async componentDidMount() {
-        let bubbleIds = this.props.item.items
+        let bubbleIds = this.props.item.items;
         for (const id of bubbleIds) {
-            console.log(id)
             this.state.bubbles.push(await getBubbleById(id));
             //console.log(this.state.bubbles)
-        };
+        }
     }
 
     render() {
@@ -33,6 +32,6 @@ class BundleList extends React.Component {
             </div >
         )
     }
-};
+}
 
 export default BundleList;

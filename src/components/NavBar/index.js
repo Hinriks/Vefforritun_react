@@ -14,7 +14,7 @@ class NavBar extends React.Component {
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-dark box-shadow">
                 <div className="container">
-                    <a className="navbar-brand logo" href="/">
+                    <a className="navbar-brand logo" href="/bubbles">
                         <img src={logo} className='img-fluid' style={styles} alt='Bubblify Logo'/>
                     </a>
 
