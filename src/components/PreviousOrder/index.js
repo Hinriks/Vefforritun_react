@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import { addToCart, clearCart, getCart, removeFromCart } from '../../services/cartService';
+import { addToCart, clearCart } from '../../services/cartService';
 import { getOrder } from '../../services/orderService';
 import styles from './styles.css'
 
