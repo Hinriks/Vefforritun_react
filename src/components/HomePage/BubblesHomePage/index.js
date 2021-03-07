@@ -20,8 +20,9 @@ const BubblesHomePage = () => {
                         <BubblePreview item={item}/>
                     </div>
                 )}
-                <h4>Click <a href='/bubbles'>here</a> to see all bubbles.</h4>
+                
                 </div>
+                <h4>Click <a href='/bubbles'>here</a> to see all bubbles.</h4>
             </div>
     )
 };
