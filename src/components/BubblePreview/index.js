@@ -12,6 +12,7 @@ const BubblePreview = ({ item }) => {
                 <a href={"/bubbles/" + item.id}>
                     <h5 className="card-title">{item.name}</h5>
                 </a>
+                <strong>{item.price} kr.</strong>
                 <p className="card-text">{item.description}</p>
                 {/*<a href={"/bubbles/" + item.id } className="btn btn-primary float-right">Buy now!</a>*/}
             </div>

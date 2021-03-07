@@ -1,6 +1,6 @@
-
 import React from 'react';
 import styles from './style.css';
+import { clearCart } from "../../services/cartService";
 
 const OrderReview = (props) => {
     function getTotalPrice() {
@@ -29,7 +29,7 @@ const OrderReview = (props) => {
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    { Object.values(props.items).map((item, index) => 
+                                    { Object.values(props.items).map((item, index) =>
                                         <tr key={index}>
                                             <td className="col-md-3">
                                                 <div className="media">
@@ -80,7 +80,7 @@ const OrderReview = (props) => {
                                 <hr />
                             </div>
 
-                            <button type="button" onClick={() => { props.incStep() }} className="btn btn-primary btn-lg btn-block">Confirm Order</button>
+                            <button type="button" onClick={() => { props.incStep(); props.saveOrder(); clearCart(); }} className="btn btn-primary btn-lg btn-block">Confirm Order</button>
 
                         </div>
 

@@ -20,12 +20,12 @@ class BubbleDetails extends React.Component {
                     <img src={ image } className="p-5 details-image"/>
                 </div>
                 <div className="col-md-6 pt-5">
-                    <h5>{ name }</h5>
+                    <h3>{ name }</h3>
                     <p>
                         <strong>{ price } kr.</strong>
                     </p>
                     <p className="pt-1 details-description">{ description }</p>
-                    <div onClick={ () => { addToCart(this.state.bubble); window.location.reload(); } } className="btn btn-primary float-right">Add to cart</div>
+                    <div onClick={ () => { addToCart(this.state.bubble); window.location.reload(); } } className="btn btn-primary float-left">Add to cart</div>
                 </div>
             </div>
         )

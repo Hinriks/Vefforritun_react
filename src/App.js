@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Bubbles from './components/Bubbles';
 import NavBar from './components/NavBar';
 import About from './components/About';
@@ -10,6 +10,7 @@ import BubbleDetails from './components/BubbleDetails';
 import Checkout from './components/Checkout';
 import Delivered from './components/Delivered';
 import Pickup from './components/Pickup';
+import NotFound from './components/NotFound';
 import OrderReview from "./components/OrderReview";
 import HomePage from "./components/HomePage";
 
@@ -31,6 +32,7 @@ function App() {
           <Route exact path="/checkout" component={Checkout} />
           <Route exact path="/checkout/1" component={Pickup} />
           <Route exact path="/checkout/2" component={Delivered} />
+          <Route path="*" component={ NotFound } />
         </Switch>
       </div>
     </div>

@@ -1,13 +1,12 @@
 
-.productsContainer {
-}
-
 .authorsText {
-    margin-top: 100px;
+    text-align: center;
+    margin-top: 50px;
 }
 
 .authors {
     display: flex;
+    justify-content: center;
 }
 
 .authors img {
@@ -16,6 +15,14 @@
     margin-right: 50px;
 }
 
-.productsContainer a {
+.bundlesHomePageContainer {
+    margin-top: 50px;
+}
+
+.bundlesHomePageContainer a {
     color: black;
+}
+
+.bubblesHomePageContainer {
+    margin-top: 50px;
 }

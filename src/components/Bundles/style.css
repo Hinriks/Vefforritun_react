@@ -1,0 +1,10 @@
+
+.bundleContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.bundleName {
+    text-align: center;
+    margin-top: 10px;
+}

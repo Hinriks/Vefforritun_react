@@ -12,8 +12,8 @@ const BubblesHomePage = () => {
     }, []);
 
     return (
-            <div className='productsContainer' style={styles}>
-                <h3>Bubbles</h3>
+            <div className='bubblesHomePageContainer' style={styles}>
+                <h2>Bubbles</h2>
                 <div className="row">
                 {Object.values(bubbles).slice(0, 3).map(item =>
                     <div key={item.id} className="col-md-4">
