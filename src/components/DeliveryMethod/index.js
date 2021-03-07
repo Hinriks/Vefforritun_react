@@ -14,7 +14,7 @@ class DeliveryMethod extends React.Component {
                     <div className="col-md-6" onClick={() => { this.props.incStep(); this.props.setDeliveryMethod("Delivery") } }>
                         <div className="delivery-method-option card m-5 p-5 text-center shadow">
                             <div className="display-4">Delivery</div>
-                            <span className="pt-1">We will delivery your order right to your doorstep.</span>
+                            <span className="pt-1">We will deliver your order right to your doorstep.</span>
                         </div>
                     </div>
                     <div className="col-md-6" onClick={() => { this.props.incStep(); this.props.setDeliveryMethod("Pick up") } }>
