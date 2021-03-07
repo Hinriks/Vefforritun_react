@@ -10,7 +10,7 @@ const Bubbles = () => {
             setBubbles(await getBubbles());
         })();
     }, []);
-    console.log(bubbles)
+
     return (
         <div className='container bubblesContainer' style={styles}>
             <h1>Products</h1>

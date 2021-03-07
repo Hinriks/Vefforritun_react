@@ -3,7 +3,6 @@ import { getBundles } from '../../services/bubbleService';
 import BundleList from '../BundlesList';
 import styles from './styles.css'
 
-
 const Bundles = () => {
     const [bundles, setBundles] = useState({});
     useEffect(() => {
@@ -11,6 +10,7 @@ const Bundles = () => {
             setBundles(await getBundles());
         })();
     }, []);
+
     return (
         <div className='container'>
             <h1 className='title'>Bundles</h1>
