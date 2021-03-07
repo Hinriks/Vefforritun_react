@@ -13,7 +13,7 @@ class Cart extends React.Component {
     }
 
     removeFromCart(itemId) {
-        let new_items = this.state.items.filter(item => item.id != itemId)
+        let new_items = this.state.items.filter(item => item.id !== itemId)
         this.setState({items: new_items})
         removeFromCart(itemId)
     }
@@ -28,7 +28,7 @@ class Cart extends React.Component {
                     <ul className="list-group">
                     {items.map((item, index) =>
                         <li className="list-group-item cart-item" key={index}>
-                            <img className="cart-item-image" src={item.image}/>
+                            <img className="cart-item-image" src={item.image} alt={item.name}/>
                             <span className="cart-item-name">{item.name}</span>
                             <span onClick={() => { this.removeFromCart(item.id); window.location.reload(); }} className="btn btn-danger float-right cart-item-remove">Remove</span>
                         </li>

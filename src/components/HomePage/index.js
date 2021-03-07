@@ -11,9 +11,13 @@ const HomePage = () => {
 
     const [bundles, setBundles] = useState({});
     useEffect(() => {
+        let isMounted = true;
         (async () => {
-            setBundles(await getBundles());
+            if (isMounted) {
+                setBundles(await getBundles());
+            }
         })();
+        return () => { isMounted = false };
     }, [bundles]);
 
     return (
@@ -34,19 +38,19 @@ const HomePage = () => {
             <h3 className='authorsText' style={styles}>Authors of the Bubblify website:</h3>
             <div className='authors'>
                 <div>
-                    <a href='https://www.instagram.com/hinni97/' target='_blank'>
+                    <a href='https://www.instagram.com/hinni97/' target='_blank' rel='noreferrer'>
                         <h5 className='name'>Hinrik Snær</h5>
                         <img src={hinrik} alt='Hinrik Snær' style={styles} />
                     </a>
                 </div>
                 <div>
-                    <a href='https://www.instagram.com/kumasimani/' target='_blank'>
+                    <a href='https://www.instagram.com/kumasimani/' target='_blank'  rel='noreferrer'>
                         <h5 className='name'>Kumasi Máni</h5>
                         <img src={kumasi} alt='Kumasi Máni' style={styles} />
                     </a>
                 </div>
                 <div>
-                    <a href='https://www.instagram.com/patrekurorn/' target="_blank">
+                    <a href='https://www.instagram.com/patrekurorn/' target='_blank'  rel='noreferrer'>
                         <h5 className='name'>Patrekur Örn</h5>
                         <img src={patrekur} alt='Patrekur Örn' style={styles} />
                     </a>

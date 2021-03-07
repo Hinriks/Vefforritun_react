@@ -17,7 +17,7 @@ class BubbleDetails extends React.Component {
         return (
             <div className="row" style={styles}>
                 <div className="col-md-6 mb-4 mb-md-0">
-                    <img src={ image } className="p-5 details-image"/>
+                    <img src={ image } className="p-5 details-image" alt={name}/>
                 </div>
                 <div className="col-md-6 pt-5">
                     <h3>{ name }</h3>

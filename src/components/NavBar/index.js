@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 import styles from './style.css';
 import logo from '../../resources/logo.jpg';
 import { countCartItems } from '../../services/cartService';
-import { render } from '@testing-library/react';
 
 class NavBar extends React.Component {
     state = {
